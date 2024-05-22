@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "613425170941",
+    "project_id": "applooks-98fec",
+    "storage_bucket": "applooks-98fec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613425170941:android:2db89221739e04c30a3194",
+        "android_client_info": {
+          "package_name": "com.example.app_look"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSb99bqBmr9yudhShAO1C99jxh9iJzPEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
