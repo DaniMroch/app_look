@@ -1,24 +1,23 @@
+import 'package:app_look/view/principalview.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatelessWidget {
+class Climaview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Humor Options'),
+          title: Text('Selecione o Clima'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Humor('Happy', 'happy_image.jpg'),
+              Clima('Frio'),
               SizedBox(height: 10),
-              Humor('Sad', 'sad_image.jpg'),
+              Clima('Calor'),
               SizedBox(height: 10),
-              Humor('Calm', 'calm_image.jpg'),
-              SizedBox(height: 10),
-              Humor('Irritated', 'irritated_image.jpg'),
+          
             ],
           ),
         ),
@@ -65,40 +64,18 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-class Humor extends StatelessWidget {
-  final String humor;
-  final String image;
+class Clima extends StatelessWidget {
+  final String clima;
 
-  Humor(this.humor, this.image);
+  Clima(this.clima);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ImageScreen(image)),
-        );
-      },
-      child: Text(humor),
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()));                },
+      child: Text(clima),
     );
   }
 }
 
-class ImageScreen extends StatelessWidget {
-  final String image;
-
-  ImageScreen(this.image);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Image Screen'),
-      ),
-      body: Center(
-        child: Image.asset(image),
-      ),
-    );
-  }
-}
