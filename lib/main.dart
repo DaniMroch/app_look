@@ -1,12 +1,29 @@
-import 'package:app_look/view/principalview.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:app_look/view/clima_view.dart';
+import 'package:app_look/view/login_view.dart';
+import 'package:app_look/view/principal_view.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'firebase_options.dart';
+import 'view/cadastrar_view.dart';
+import 'view/clima2_view.dart';
+import 'view/saveimage.dart';
+
+Future<void> main() async {
+  //
+  // Firebase
+  //
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     DevicePreview(
       enabled: true,
-      builder: (context) => const MainApp(),
+      builder: (context) => MainApp(),
     ),
   );
 }
@@ -20,9 +37,13 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Look',
       //rotas de navegacao
-      initialRoute: 't1',
+      initialRoute: 'login',
       routes: {
-        't1': (context) => MainScreen(),
+        'login': (context) => LoginView(),
+        'cadastrar': (context) => CadastrarView(),
+        //'principal': (context) => MyHomePage(),
+        'principal': (context) => ClimatePage(),
+        'save': (context) => SaveImageScreen(),
       },
     );
   }
