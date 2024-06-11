@@ -29,3 +29,6 @@ flutter:
     - assets/triste.png
     - assets/calmo.png
     - assets/calmo_frio.png
+    - assets/triste_frio.png
+    - assets/alegre_frio.png
+    - assets/irritado_frio.png

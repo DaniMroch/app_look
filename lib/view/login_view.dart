@@ -19,8 +19,8 @@ class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
-    txtEmail.text = ''; //'joao@email.com';
-    txtSenha.text = ''; //'123456';
+    txtEmail.text = '';
+    txtSenha.text = '';
   }
 
   @override
@@ -117,7 +117,6 @@ class _LoginViewState extends State<LoginView> {
                   txtEmail.text,
                   txtSenha.text,
                 );
-                //Navigator.pushNamed(context, 'principal');
               },
               child: Text('Entrar'),
             ),

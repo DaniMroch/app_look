@@ -5,11 +5,8 @@ import 'package:flutter/material.dart';
 import '../view/util.dart';
 
 class LoginController {
-  //
   // CRIAR CONTA
-  // Adiciona a conta de um novo usuário no serviço
-  // Firebase Authentication
-  //
+  // Adiciona a conta de um novo usuário no serviço Firebase Authentication
   criarConta(context, nome, telefone, cidade, email, senha) {
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(
@@ -19,9 +16,7 @@ class LoginController {
         .then((resultado) {
       //Sucesso
 
-      //
       // Armazenar o NOME, TELEFONE e CIDADE do usuário e o UID em uma coleção no banco de dados Firestore
-      //
       FirebaseFirestore.instance.collection('usuarios').add(
         {
           "nome": nome,
@@ -39,6 +34,12 @@ class LoginController {
       switch (e.code) {
         case 'email-already-in-use':
           erro(context, 'O email já foi cadastrado.');
+          break;
+        case 'invalid-credential':
+          erro(context, 'Email e/ou senha inválida.');
+          break;
+        case 'invalid-email':
+          erro(context, 'O formato do email é inválido.');
           break;
         default:
           erro(context, 'ERRO: ${e.code.toString()}');
@@ -94,7 +95,6 @@ class LoginController {
     FirebaseAuth.instance.signOut();
   }
 
-  //
   // ID do Usuário Logado
   //
   idUsuario() {
